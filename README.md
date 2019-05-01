@@ -1,8 +1,7 @@
 
 # Easings for Android  
 
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)  
-[![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli)  
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli)  
   
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
   
@@ -21,27 +20,55 @@ dependencies {
 This can be used exactly like the native interpolators.
 
 ```
-ValueAnimator.ofFloat(0f,1f) .apply { 
-	interpolator = Interpolators(Easings.SIN_IN)
-	start()  
+ValueAnimator.ofFloat(0f,1f).apply {
+    interpolator = Interpolators(Easings.SIN_IN)
+    start()
 }
 
-ObjectAnimator.ofFloat(textView,  "translationX",  100f).apply { 
+ObjectAnimator.ofFloat(textView, "translationX", 100f).apply {
 	interpolator = Interpolators(Easings.ELASTIC_IN_OUT)
-	start()  
+	start()
 }
 
-myView.animate().apply {  
-	translationYBy(100f)  
-    interpolator = Interpolators(Easings.BOUNCE_OUT)  
-    start()  
+myView.animate().apply {
+    translationYBy(100f)
+    interpolator = Interpolators(Easings.BOUNCE_OUT)
+    start()
 }
 ```
 
 | Interpolator | Behavior |  
 | --- | :---: |
-| Sinusoidal ease in<br/> `Easings.SIN_IN` | <img src="art/sin_in.gif" /> | 
-| Sinusoidal ease out<br/> `Easings.SIN_OUT` | <img src="art/sin_out.gif" /> | 
+| Sinusoidal ease in<br/> `Easings.SIN_IN` | <img src="art/sin_in.gif" width="80%" /> | 
+| Sinusoidal ease out<br/> `Easings.SIN_OUT` | <img src="art/sin_out.gif" width="80%" /> | 
+| Sinusoidal ease in out<br/> `Easings.SIN_IN_OUT` | <img src="art/sin_in_out.gif" width="80%" /> | 
+| Quadratic ease in<br/> `Easings.QUAD_IN` | <img src="art/quad_in.gif" width="80%" /> | 
+| Quadratic ease out<br/> `Easings.QUAD_OUT` | <img src="art/quad_out.gif" width="80%" /> | 
+| Quadratic ease in out<br/> `Easings.QUAD_IN_OUT` | <img src="art/quad_in_out.gif" width="80%" /> | 
+| Cubic ease in<br/> `Easings.CUBIC_IN` | <img src="art/cubic_in.gif" width="80%" /> | 
+| Cubic ease out<br/> `Easings.CUBIC_OUT` | <img src="art/cubic_out.gif" width="80%" /> | 
+| Cubic ease in out<br/> `Easings.CUBIC_IN_OUT` | <img src="art/cubic_in_out.gif" width="80%" /> | 
+| Quartic ease in<br/> `Easings.QUART_IN` | <img src="art/quart_in.gif" width="80%" /> | 
+| Quartic ease out<br/> `Easings.QUART_OUT` | <img src="art/quart_out.gif" width="80%" /> | 
+| Quartic ease in out<br/> `Easings.QUART_IN_OUT` | <img src="art/quart_in_out.gif" width="80%" /> | 
+| Quintic ease in<br/> `Easings.QUINT_IN` | <img src="art/quint_in.gif" width="80%" /> | 
+| Quintic ease out<br/> `Easings.QUINT_OUT` | <img src="art/quint_out.gif" width="80%" /> | 
+| Quintic ease in out<br/> `Easings.QUINT_IN_OUT` | <img src="art/quint_in_out.gif" width="80%" /> | 
+| Exponential ease in<br/> `Easings.EXP_IN` | <img src="art/exp_in.gif" width="80%" /> | 
+| Exponential ease out<br/> `Easings.EXP_OUT` | <img src="art/exp_out.gif" width="80%" /> | 
+| Exponential ease in out<br/> `Easings.EXP_IN_OUT` | <img src="art/exp_in_out.gif" width="80%" /> | 
+| Circular ease in<br/> `Easings.CIRC_IN` | <img src="art/circ_in.gif" width="80%" /> | 
+| Circular ease out<br/> `Easings.CIRC_OUT` | <img src="art/circ_out.gif" width="80%" /> | 
+| Circular ease in out<br/> `Easings.CIRC_IN_OUT` | <img src="art/circ_in_out.gif" width="80%" /> | 
+| Back ease in<br/> `Easings.BACK_IN` | <img src="art/back_in.gif" width="80%" /> | 
+| Back ease out<br/> `Easings.BACK_OUT` | <img src="art/back_out.gif" width="80%" /> | 
+| Back ease in out<br/> `Easings.BACK_IN_OUT` | <img src="art/back_in_out.gif" width="80%" /> | 
+| Elastic ease in<br/> `Easings.ELASTIC_IN` | <img src="art/elastic_in.gif" width="80%" /> | 
+| Elastic ease out<br/> `Easings.ELASTIC_OUT` | <img src="art/elastic_out.gif" width="80%" /> | 
+| Elastic ease in out<br/> `Easings.ELASTIC_IN_OUT` | <img src="art/elastic_in_out.gif" width="80%" /> | 
+| Bounce ease in<br/> `Easings.BOUNCE_IN` | <img src="art/bounce_in.gif" width="80%" /> | 
+| Bounce ease out<br/> `Easings.BOUNCE_OUT` | <img src="art/bounce_out.gif" width="80%" /> | 
+| Bounce ease in out<br/> `Easings.BOUNCE_IN_OUT` | <img src="art/bounce_in_out.gif" width="80%" /> | 
 
 ## CONTRIBUTION  
 
@@ -53,15 +80,11 @@ If you have new ideas, feel free to contribute by opening pull requests on dev b
 
 Are you using this library in your app? Let us know and we'll show it here.  
   
-## CONTRIBUTORS <table>   
-   
-<tr>      
-<td>      
-<a href="https://github.com/RamiJ3mli"><img src="https://avatars2.githubusercontent.com/u/22471667?s=460&v=4" title="Rami Jemli" width="80" height="80"></a><br /><sub><center><b>Rami Jemli</b></center></sub>      
-</td>      
-</tr>      
-</table>      
-  
+## TO DO
+-   [ ] Add tension modifier for elastic easing  
+-   [ ] Add path interpolator editor  
+-   [ ] Add sample for google play  
+
 ## LICENSE 
 
 ```
