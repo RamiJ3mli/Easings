@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Easings</string>
+
+    <array name="interpolator_titles">
+        <item>SINUSOIDAL EASE IN INTERPOLATOR</item>
+        <item>SINUSOIDAL EASE OUT INTERPOLATOR</item>
+        <item>SINUSOIDAL EASE IN OUT INTERPOLATOR</item>
+
+        <item>QUADRATIC EASE IN INTERPOLATOR</item>
+        <item>QUADRATIC EASE OUT INTERPOLATOR</item>
+        <item>QUADRATIC EASE IN OUT INTERPOLATOR</item>
+
+        <item>CUBIC EASE IN INTERPOLATOR</item>
+        <item>CUBIC EASE OUT INTERPOLATOR</item>
+        <item>CUBIC EASE IN OUT INTERPOLATOR</item>
+
+        <item>QUARTIC EASE IN INTERPOLATOR</item>
+        <item>QUARTIC EASE OUT INTERPOLATOR</item>
+        <item>QUARTIC EASE IN OUT INTERPOLATOR</item>
+
+        <item>QUINTIC EASE IN INTERPOLATOR</item>
+        <item>QUINTIC EASE OUT INTERPOLATOR</item>
+        <item>QUINTIC EASE IN OUT INTERPOLATOR</item>
+
+        <item>EXPONENTIAL EASE IN INTERPOLATOR</item>
+        <item>EXPONENTIAL EASE OUT INTERPOLATOR</item>
+        <item>EXPONENTIAL EASE IN OUT INTERPOLATOR</item>
+
+        <item>CIRCULAR EASE IN INTERPOLATOR</item>
+        <item>CIRCULAR EASE OUT INTERPOLATOR</item>
+        <item>CIRCULAR EASE IN OUT INTERPOLATOR</item>
+
+        <item>BACK EASE IN INTERPOLATOR</item>
+        <item>BACK EASE OUT INTERPOLATOR</item>
+        <item>BACK EASE IN OUT INTERPOLATOR</item>
+
+        <item>ELASTIC EASE IN INTERPOLATOR</item>
+        <item>ELASTIC EASE OUT INTERPOLATOR</item>
+        <item>ELASTIC EASE IN OUT INTERPOLATOR</item>
+
+        <item>BOUNCE EASE IN INTERPOLATOR</item>
+        <item>BOUNCE EASE OUT INTERPOLATOR</item>
+        <item>BOUNCE EASE IN OUT INTERPOLATOR</item>
+    </array>
+
+</resources>
