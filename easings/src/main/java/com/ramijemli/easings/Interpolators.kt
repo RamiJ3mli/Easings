@@ -5,7 +5,7 @@ import android.view.animation.LinearInterpolator
 import androidx.annotation.NonNull
 import androidx.core.view.animation.PathInterpolatorCompat
 
-class EasingInterpolator(@NonNull val easing: Easings) : Interpolator {
+class Interpolators(@NonNull val easing: Easings) : Interpolator {
 
     private var interpolator: Interpolator
 

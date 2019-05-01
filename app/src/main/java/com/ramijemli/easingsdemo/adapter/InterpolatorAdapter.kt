@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import androidx.recyclerview.widget.RecyclerView
-import com.ramijemli.easings.EasingInterpolator
+import com.ramijemli.easings.Interpolators
 import com.ramijemli.easings.Easings
 import com.ramijemli.easingsdemo.R
 import kotlinx.android.extensions.LayoutContainer
@@ -83,45 +83,45 @@ class InterpolatorAdapter(mContext: Context?) : RecyclerView.Adapter<Interpolato
         fun bind(position: Int) {
             chart.setInterpolator(
                     when (position) {
-                        SINUSOIDAL_IN -> EasingInterpolator(Easings.SIN_IN)
-                        SINUSOIDAL_OUT -> EasingInterpolator(Easings.SIN_OUT)
-                        SINUSOIDAL_IN_OUT -> EasingInterpolator(Easings.SIN_IN_OUT)
+                        SINUSOIDAL_IN -> Interpolators(Easings.SIN_IN)
+                        SINUSOIDAL_OUT -> Interpolators(Easings.SIN_OUT)
+                        SINUSOIDAL_IN_OUT -> Interpolators(Easings.SIN_IN_OUT)
 
-                        QUADRATIC_IN -> EasingInterpolator(Easings.QUAD_IN)
-                        QUADRATIC_OUT -> EasingInterpolator(Easings.QUAD_OUT)
-                        QUADRATIC_IN_OUT -> EasingInterpolator(Easings.QUAD_IN_OUT)
+                        QUADRATIC_IN -> Interpolators(Easings.QUAD_IN)
+                        QUADRATIC_OUT -> Interpolators(Easings.QUAD_OUT)
+                        QUADRATIC_IN_OUT -> Interpolators(Easings.QUAD_IN_OUT)
 
-                        CUBIC_IN -> EasingInterpolator(Easings.CUBIC_IN)
-                        CUBIC_OUT -> EasingInterpolator(Easings.CUBIC_OUT)
-                        CUBIC_IN_OUT -> EasingInterpolator(Easings.CUBIC_IN_OUT)
+                        CUBIC_IN -> Interpolators(Easings.CUBIC_IN)
+                        CUBIC_OUT -> Interpolators(Easings.CUBIC_OUT)
+                        CUBIC_IN_OUT -> Interpolators(Easings.CUBIC_IN_OUT)
 
-                        QUARTIC_IN -> EasingInterpolator(Easings.QUART_IN)
-                        QUARTIC_OUT -> EasingInterpolator(Easings.QUART_OUT)
-                        QUARTIC_IN_OUT -> EasingInterpolator(Easings.QUART_IN_OUT)
+                        QUARTIC_IN -> Interpolators(Easings.QUART_IN)
+                        QUARTIC_OUT -> Interpolators(Easings.QUART_OUT)
+                        QUARTIC_IN_OUT -> Interpolators(Easings.QUART_IN_OUT)
 
-                        QUINTIC_IN -> EasingInterpolator(Easings.QUINT_IN)
-                        QUINTIC_OUT -> EasingInterpolator(Easings.QUINT_OUT)
-                        QUINTIC_IN_OUT -> EasingInterpolator(Easings.QUINT_IN_OUT)
+                        QUINTIC_IN -> Interpolators(Easings.QUINT_IN)
+                        QUINTIC_OUT -> Interpolators(Easings.QUINT_OUT)
+                        QUINTIC_IN_OUT -> Interpolators(Easings.QUINT_IN_OUT)
 
-                        EXPONENTIAL_IN -> EasingInterpolator(Easings.EXP_IN)
-                        EXPONENTIAL_OUT -> EasingInterpolator(Easings.EXP_OUT)
-                        EXPONENTIAL_IN_OUT -> EasingInterpolator(Easings.EXP_IN_OUT)
+                        EXPONENTIAL_IN -> Interpolators(Easings.EXP_IN)
+                        EXPONENTIAL_OUT -> Interpolators(Easings.EXP_OUT)
+                        EXPONENTIAL_IN_OUT -> Interpolators(Easings.EXP_IN_OUT)
 
-                        CIRCULAR_IN -> EasingInterpolator(Easings.CIRC_IN)
-                        CIRCULAR_OUT -> EasingInterpolator(Easings.CIRC_OUT)
-                        CIRCULAR_IN_OUT -> EasingInterpolator(Easings.CIRC_IN_OUT)
+                        CIRCULAR_IN -> Interpolators(Easings.CIRC_IN)
+                        CIRCULAR_OUT -> Interpolators(Easings.CIRC_OUT)
+                        CIRCULAR_IN_OUT -> Interpolators(Easings.CIRC_IN_OUT)
 
-                        BACK_IN -> EasingInterpolator(Easings.BACK_IN)
-                        BACK_OUT -> EasingInterpolator(Easings.BACK_OUT)
-                        BACK_IN_OUT -> EasingInterpolator(Easings.BACK_IN_OUT)
+                        BACK_IN -> Interpolators(Easings.BACK_IN)
+                        BACK_OUT -> Interpolators(Easings.BACK_OUT)
+                        BACK_IN_OUT -> Interpolators(Easings.BACK_IN_OUT)
 
-                        ELASTIC_IN -> EasingInterpolator(Easings.ELASTIC_IN)
-                        ELASTIC_OUT -> EasingInterpolator(Easings.ELASTIC_OUT)
-                        ELASTIC_IN_OUT -> EasingInterpolator(Easings.ELASTIC_IN_OUT)
+                        ELASTIC_IN -> Interpolators(Easings.ELASTIC_IN)
+                        ELASTIC_OUT -> Interpolators(Easings.ELASTIC_OUT)
+                        ELASTIC_IN_OUT -> Interpolators(Easings.ELASTIC_IN_OUT)
 
-                        BOUNCE_IN -> EasingInterpolator(Easings.BOUNCE_IN)
-                        BOUNCE_OUT -> EasingInterpolator(Easings.BOUNCE_OUT)
-                        BOUNCE_IN_OUT -> EasingInterpolator(Easings.BOUNCE_IN_OUT)
+                        BOUNCE_IN -> Interpolators(Easings.BOUNCE_IN)
+                        BOUNCE_OUT -> Interpolators(Easings.BOUNCE_OUT)
+                        BOUNCE_IN_OUT -> Interpolators(Easings.BOUNCE_IN_OUT)
                         else -> LinearInterpolator()
                     }
             )
