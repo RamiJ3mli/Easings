@@ -9,8 +9,8 @@ If you are not pleased with the native interpolators on Android. Here are 30 cus
  
 <img src="art/home.gif" width="32%" /> <img src="art/editor.gif" width="32%" />
 <br/>  
-Until a demo would be released on Play, you can execute the sample and see the library's custom interpolators in action. <br/>
-You can also experiment with the path interpolator editor to get the control points that would allow you to have a custom interpolator using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
+Until a demo gets released on Play, you can execute the sample and see the library's custom interpolators in action. <br/>
+You can also experiment with the path interpolator editor to get the control points for a custom interpolator using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
  
 ## SETUP  
 
