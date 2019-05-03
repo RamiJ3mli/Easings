@@ -1,6 +1,29 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+    bintrayRepo = "Easings"
+    bintrayName = "com.ramijemli"
+    libraryName = "easings"
+
+    publishedGroupId = 'com.ramijemli'
+    artifact = 'easings'
+    libraryVersion = '1.0.0'
+
+    libraryDescription = 'A port of Robert Penner\'s easing equations to kotlin on Android to add flavors to your animations.'
+    siteUrl = 'https://github.com/RamiJ3mli/Easings'
+    gitUrl = 'https://github.com/RamiJ3mli/Easings.git'
+    developerId = 'ramijemli'
+    developerName = 'Rami Jemli'
+    developerEmail = 'jemli.idea@gmail.com'
+    licenseName = 'The Apache Software Licence, Version 2.0'
+    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0'
+    allLicenses = ["Apache-2.0"]
+
+}
 
 android {
     compileSdkVersion 28
@@ -23,10 +46,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    compile "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 repositories {
     mavenCentral()
+}
+
+if (rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 }

@@ -6,13 +6,15 @@
     android:layout_height="wrap_content"
     android:transitionGroup="false">
 
-    <View
+    <Button
         android:id="@+id/bg"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="#37474F"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/all_ripple_items"
         android:elevation="16dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +24,7 @@
         android:id="@+id/chart"
         android:layout_width="0dp"
         android:layout_height="260dp"
-        android:clickable="true"
         android:elevation="16dp"
-        android:focusable="true"
         android:outlineProvider="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:outlineProvider="none"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chart"

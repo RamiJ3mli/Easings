@@ -77,8 +77,7 @@ class InterpolatorAdapter(mContext: Context?) : RecyclerView.Adapter<Interpolato
 
     override fun getItemCount(): Int = mData?.size()!!
 
-    inner class InterpolatorViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
-        LayoutContainer {
+    inner class InterpolatorViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun bind(position: Int) {
             chart.setInterpolator(

@@ -1,14 +1,17 @@
 package com.ramijemli.easingsdemo.activity
 
-import android.animation.ValueAnimator
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.app.ProgressDialog.show
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ramijemli.easings.Easings
-import com.ramijemli.easings.Interpolators
 import com.ramijemli.easingsdemo.R
 import com.ramijemli.easingsdemo.adapter.InterpolatorAdapter
+import com.ramijemli.easingsdemo.custom.RecyclerItemClickListenr
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -28,14 +31,14 @@ class HomeActivity : AppCompatActivity() {
         interRv.setHasFixedSize(true)
         adapter = InterpolatorAdapter(baseContext)
         interRv.adapter = adapter
-        interRv.animate().apply {
-            translationYBy(100f)
-            interpolator = Interpolators(Easings.SIN_IN)
-            start()
-        }
+        interRv.addOnItemTouchListener(RecyclerItemClickListenr(this, interRv, object : RecyclerItemClickListenr.OnItemClickListener {
+            override fun onItemClick(view: View, position: Int) {
+                val i = Intent(this@HomeActivity, PreviewActivity::class.java)
+                i.putExtra(ARG_INTERPOLATOR,position)
+                startActivity(i)
+            }
+        }))
 
-        val animator = ValueAnimator.ofFloat(0f,1f)
-        animator.interpolator = Interpolators(Easings.BOUNCE_OUT)
-        animator.start()
+        Toast.makeText(applicationContext, "Tap on a chart to see interpolator in action", Toast.LENGTH_LONG).show()
     }
 }

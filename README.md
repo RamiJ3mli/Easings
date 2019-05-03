@@ -10,8 +10,10 @@ If you are not pleased with the native interpolators on Android. Here are 30 cus
 Dependency should be declared in your app module level  `build.gradle` file:    
     
 ``` 
-dependencies {   
+dependencies {
+
 	 implementation 'com.ramijemli:easings:1.0.0' 
+
 } 
 ```   
  
@@ -26,8 +28,8 @@ ValueAnimator.ofFloat(0f,1f).apply {
 }
 
 ObjectAnimator.ofFloat(textView, "translationX", 100f).apply {
-	interpolator = Interpolators(Easings.ELASTIC_IN_OUT)
-	start()
+    interpolator = Interpolators(Easings.ELASTIC_IN_OUT)
+    start()
 }
 
 myView.animate().apply {
