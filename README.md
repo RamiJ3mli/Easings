@@ -6,7 +6,12 @@
 [![Download](https://api.bintray.com/packages/ramijemli/Easings/com.ramijemli/images/download.svg)](https://bintray.com/ramijemli/Easings/com.ramijemli/1.0.0)
 
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
-  
+ 
+<img src="art/home.gif" width="32%" /> <img src="art/editor.gif" width="32%" />
+<br/>  
+Until a demo would be released on Play, you can execute the sample and see the library's custom interpolators in action. <br/>
+You can also experiment with the path interpolator editor to get the control points that would allow you to have a custom interpolator using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
+ 
 ## SETUP  
 
 Dependency should be declared in your app module level  `build.gradle` file:    
@@ -18,6 +23,7 @@ dependencies {
 
 }
 ```   
+
 
 ## HOW TO USE
 
