@@ -3,15 +3,12 @@ package com.ramijemli.easingsdemo.activity
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.animation.TimeInterpolator
-import android.animation.ValueAnimator
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.util.TypedValue
 import android.view.View
-import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ramijemli.easings.Easings
 import com.ramijemli.easings.Interpolators
@@ -29,7 +26,7 @@ class PreviewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.ramijemli.easingsdemo.R.layout.activity_preview)
+        setContentView(R.layout.activity_preview)
 
         intent.extras?.apply {
             val pos = getInt(ARG_INTERPOLATOR, 0)
@@ -88,20 +85,32 @@ class PreviewActivity : AppCompatActivity() {
         handler.removeCallbacks(runnable)
         super.onDestroy()
     }
+
     private fun setupAnimation() {
-        val translateAnim = ObjectAnimator.ofFloat(translate, View.TRANSLATION_X, 0f, dipToPixels(applicationContext, 200f)).apply {
+        val translateAnim =
+            ObjectAnimator.ofFloat(a, View.TRANSLATION_X, 0f, dipToPixels(applicationContext, 160f)).apply {
+                duration = 2000
+                interpolator = inter
+                addUpdateListener {
+                    b.translationX = -(it.animatedValue as Float)
+                }
+            }
+
+        val rotateAnim = ObjectAnimator.ofFloat(c, View.ROTATION, 0f, 180f).apply {
+            addUpdateListener {
+                d.rotation =  -(it.animatedValue as Float)
+            }
             duration = 2000
             interpolator = inter
         }
 
         val scalex = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.5f)
         val scaley = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.5f)
-        val scaleAnim = ObjectAnimator.ofPropertyValuesHolder(scale, scalex, scaley).apply {
-            duration = 2000
-            interpolator = inter
-        }
-
-        val rotateAnim =ObjectAnimator.ofFloat(rotation, View.ROTATION, 0f, 270f).apply {
+        val scaleAnim = ObjectAnimator.ofPropertyValuesHolder(e, scalex, scaley).apply {
+            addUpdateListener {
+                f.scaleX = 1.5f - (.5f * it.animatedFraction)
+                f.scaleY = 1.5f - (.5f * it.animatedFraction)
+            }
             duration = 2000
             interpolator = inter
         }

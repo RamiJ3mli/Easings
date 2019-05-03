@@ -18,6 +18,8 @@
         </activity>
         <activity android:name="com.ramijemli.easingsdemo.activity.PreviewActivity">
         </activity>
+        <activity android:name="com.ramijemli.easingsdemo.activity.EditorActivity">
+        </activity>
     </application>
 
 </manifest>

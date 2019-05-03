@@ -21,10 +21,14 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        setupRV()
+        setupLayout()
     }
 
-    private fun setupRV() {
+    private fun setupLayout() {
+        editor.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, EditorActivity::class.java))
+        }
+
         val llm = LinearLayoutManager(baseContext, RecyclerView.VERTICAL, false)
         llm.isItemPrefetchEnabled = true
         interRv.layoutManager = llm
