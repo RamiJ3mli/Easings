@@ -1,8 +1,10 @@
 
 # Easings for Android  
 
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli)  
-  
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) 
+[![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli)  
+[![Download](https://api.bintray.com/packages/ramijemli/Easings/com.ramijemli/images/download.svg)](https://bintray.com/ramijemli/Easings/com.ramijemli/1.0.0)
+
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
   
 ## SETUP  
@@ -12,11 +14,11 @@ Dependency should be declared in your app module level  `build.gradle` file:
 ``` 
 dependencies {
 
-	 implementation 'com.ramijemli:easings:1.0.0' 
+    implementation 'com.ramijemli:easings:1.0.0' 
 
-} 
+}
 ```   
- 
+
 ## HOW TO USE
 
 This can be used exactly like the native interpolators.
