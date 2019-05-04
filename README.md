@@ -7,7 +7,7 @@
 
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
  
-<img src="art/home.gif" width="32%" /> <img src="art/editor.gif" width="32%" />
+<img src="art/home.gif" alt="GIF LOADING" width="32%" /> <img src="art/editor.gif" width="32%" />
 <br/>  
 Until a demo gets released on Play, you can execute the sample and see the library's custom interpolators in action. <br/>
 You can also experiment with the path interpolator editor to get the control points for a custom interpolator using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
