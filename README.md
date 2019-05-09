@@ -2,15 +2,21 @@
 # Easings for Android  
 
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) 
-[![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli) 
 [![Download](https://api.bintray.com/packages/ramijemli/Easings/com.ramijemli/images/download.svg)](https://bintray.com/ramijemli/Easings/com.ramijemli/1.0.0)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Easings-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7642)
+[![Twitter](https://img.shields.io/badge/Twitter-@RamiJemli-blue.svg?style=flat)](http://twitter.com/rami_jemli) 
+<br/>
+<br/>
+<img src="art/cover.png" />
+<br/>
 
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
- 
+<br/><a href="https://play.google.com/store/apps/details?id=com.ramijemli.easingsdemo"><img src="art/google-play-badge.png" title="Easings google play demo"  width="30%"></a>
+
 <img src="art/home.gif" alt="GIF LOADING" width="32%" /> <img src="art/editor.gif" width="32%" />
 <br/>  
-Until a demo gets released on Play, you can execute the sample and see the library's custom interpolators in action. <br/>
-You can also experiment with the path interpolator editor to get the control points for a custom interpolator using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
+Get the demo from GooglePlay and see the library's custom interpolators in action. <br/>
+You can also experiment with the path interpolator editor to get the control points for a custom interpolator of your choice using `PathInterpolatorCompat.create(x1, y1, x2, y2)`.
  
 ## SETUP  
 
