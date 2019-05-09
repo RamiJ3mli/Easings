@@ -11,7 +11,7 @@
 <br/>
 
 If you are not pleased with the native interpolators on Android. Here are 30 custom ones to make motion look more real. <br/>This small library is a port of Robert Penner's easing equations to kotlin on Android to add flavors to your animations, and it's based on [https://easings.net/](https://easings.net/).
-<br/><a href="https://play.google.com/store/apps/details?id=com.ramijemli.easingsdemo"><img src="art/google-play-badge.png" title="Easings google play demo"  width="30%"></a>
+<br/><br/><a href="https://play.google.com/store/apps/details?id=com.ramijemli.easingsdemo"><img src="art/google-play-badge.png" title="Easings google play demo"  width="30%"></a>
 
 <img src="art/home.gif" alt="GIF LOADING" width="32%" /> <img src="art/editor.gif" width="32%" />
 <br/>  
@@ -98,8 +98,8 @@ Are you using this library in your app? Let us know and we'll show it here.
   
 ## TO DO
 -   [ ] Add tension modifier for elastic easing  
--   [ ] Add path interpolator editor  
--   [ ] Add sample for google play  
+-   [x] Add path interpolator editor  
+-   [x] Add sample for google play  
 
 ## LICENSE 
 
