@@ -55,6 +55,8 @@ const val BOUNCE_IN = 27
 const val BOUNCE_OUT = 28
 const val BOUNCE_IN_OUT = 29
 
+const val STEPS = 30
+
 class InterpolatorAdapter(mContext: Context?) : RecyclerView.Adapter<InterpolatorAdapter.InterpolatorViewHolder>() {
 
 
@@ -121,6 +123,9 @@ class InterpolatorAdapter(mContext: Context?) : RecyclerView.Adapter<Interpolato
                         BOUNCE_IN -> Interpolators(Easings.BOUNCE_IN)
                         BOUNCE_OUT -> Interpolators(Easings.BOUNCE_OUT)
                         BOUNCE_IN_OUT -> Interpolators(Easings.BOUNCE_IN_OUT)
+
+                        STEPS -> Interpolators(Easings.STEPS, 10)
+
                         else -> LinearInterpolator()
                     }
             )

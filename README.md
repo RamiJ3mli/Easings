@@ -25,7 +25,7 @@ Dependency should be declared in your app module level  `build.gradle` file:
 ``` 
 dependencies {
 
-    implementation 'com.ramijemli:easings:1.0.0' 
+    implementation 'com.ramijemli:easings:1.1.0' 
 
 }
 ```   

@@ -5,9 +5,12 @@ import android.view.animation.LinearInterpolator
 import androidx.annotation.NonNull
 import androidx.core.view.animation.PathInterpolatorCompat
 
-class Interpolators(@NonNull val easing: Easings) : Interpolator {
+class Interpolators @JvmOverloads constructor(@NonNull val easing: Easings = Easings.LINEAR, var steps: Int = 1) :
+    Interpolator {
 
     private var interpolator: Interpolator
+    private var step: Float = -1f
+    private var stepTime: Float = -1f
 
     init {
         interpolator = when (easing) {
@@ -48,9 +51,33 @@ class Interpolators(@NonNull val easing: Easings) : Interpolator {
             Easings.BOUNCE_IN -> bounceIn(value)
             Easings.BOUNCE_OUT -> bounceOut(value)
             Easings.BOUNCE_IN_OUT -> bounceInOut(value)
+            Easings.STEPS -> step(value)
             else -> interpolator.getInterpolation(value)
         }
     }
+
+//    private fun stepStart(t: Float): Float {
+//        when {
+//            t == 0f -> stepIncrement = 1 / steps.toFloat()
+//            t >= stepIncrement -> stepIncrement += 1 / steps.toFloat()
+//        }
+//        return stepIncrement
+//    }
+
+    private fun step(t: Float): Float {
+        when {
+            t == 0f -> {
+                step = 0f
+                stepTime = 1 / steps.toFloat()
+            }
+            t >= stepTime -> {
+                stepTime += 1 / steps.toFloat()
+                step  += 1 / (steps.toFloat() - 1)
+            }
+        }
+        return step
+    }
+
 
     private fun bounceIn(t: Float): Float {
         return 1f - bounceOut(1f - t)
@@ -74,22 +101,22 @@ class Interpolators(@NonNull val easing: Easings) : Interpolator {
         }
     }
 
-    private fun bounceInOut(t:Float): Float {
-        if (t<0.5) {
-            val t=1-2*t
+    private fun bounceInOut(t: Float): Float {
+        if (t < 0.5) {
+            val t = 1 - 2 * t
             return when {
-                t < (1/2.75) -> ((1 - (7.5625*t*t))/2).toFloat()
-                t < (2/2.75) -> ((1 - (7.5625*(t-(1.5/2.75))*(t-(1.5/2.75)) + 0.75))/2).toFloat()
-                t < (2.5/2.75) -> ((1 - (7.5625*(t-(2.25/2.75))*(t-(2.25/2.75)) + 0.9375))/2).toFloat()
-                else -> ((1 - (7.5625*(t-(2.625/2.75))*(t-(2.625/2.75)) + 0.984375))/2).toFloat()
+                t < (1 / 2.75) -> ((1 - (7.5625 * t * t)) / 2).toFloat()
+                t < (2 / 2.75) -> ((1 - (7.5625 * (t - (1.5 / 2.75)) * (t - (1.5 / 2.75)) + 0.75)) / 2).toFloat()
+                t < (2.5 / 2.75) -> ((1 - (7.5625 * (t - (2.25 / 2.75)) * (t - (2.25 / 2.75)) + 0.9375)) / 2).toFloat()
+                else -> ((1 - (7.5625 * (t - (2.625 / 2.75)) * (t - (2.625 / 2.75)) + 0.984375)) / 2).toFloat()
             }
         } else {
-            val t=2*t-1
+            val t = 2 * t - 1
             return when {
-                t < (1/2.75) -> (0.5 + (7.5625*t*t)/2).toFloat()
-                t < (2/2.75) -> (0.5 + (7.5625*(t-(1.5/2.75))*(t-(1.5/2.75)) + 0.75)/2).toFloat()
-                t < (2.5/2.75) -> (0.5 + (7.5625*(t-(2.25/2.75))*(t-(2.25/2.75)) + 0.9375)/2).toFloat()
-                else -> (0.5 + (7.5625*(t-(2.625/2.75))*(t-(2.625/2.75)) + 0.984375)/2).toFloat()
+                t < (1 / 2.75) -> (0.5 + (7.5625 * t * t) / 2).toFloat()
+                t < (2 / 2.75) -> (0.5 + (7.5625 * (t - (1.5 / 2.75)) * (t - (1.5 / 2.75)) + 0.75) / 2).toFloat()
+                t < (2.5 / 2.75) -> (0.5 + (7.5625 * (t - (2.25 / 2.75)) * (t - (2.25 / 2.75)) + 0.9375) / 2).toFloat()
+                else -> (0.5 + (7.5625 * (t - (2.625 / 2.75)) * (t - (2.625 / 2.75)) + 0.984375) / 2).toFloat()
             }
         }
     }

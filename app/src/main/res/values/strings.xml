@@ -41,6 +41,8 @@
         <item>BOUNCE EASE IN INTERPOLATOR</item>
         <item>BOUNCE EASE OUT INTERPOLATOR</item>
         <item>BOUNCE EASE IN OUT INTERPOLATOR</item>
+
+        <item>STEPS INTERPOLATOR</item>
     </array>
 
 </resources>

@@ -32,5 +32,6 @@ enum class Easings {
     BOUNCE_IN,
     BOUNCE_OUT,
     BOUNCE_IN_OUT,
+    STEPS
 }
 
