@@ -2,10 +2,12 @@ package com.ramijemli.easings
 
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
-import androidx.annotation.NonNull
 import androidx.core.view.animation.PathInterpolatorCompat
+import kotlin.math.asin
+import kotlin.math.pow
+import kotlin.math.sin
 
-class Interpolators(@NonNull val easing: Easings) : Interpolator {
+class Interpolators(private val easing: Easings) : Interpolator {
 
     private var interpolator: Interpolator
 
@@ -63,10 +65,12 @@ class Interpolators(@NonNull val easing: Easings) : Interpolator {
                 val o = t - 1.5 / 2.75
                 (7.5625 * o * o + 0.75).toFloat()
             }
+
             t < 2.5 / 2.75 -> {
                 val o = t - 2.25 / 2.75
                 (7.5625 * o * o + 0.9375).toFloat()
             }
+
             else -> {
                 val o = t - 2.625 / 2.75
                 (7.5625 * o * o + 0.984375).toFloat()
@@ -74,22 +78,22 @@ class Interpolators(@NonNull val easing: Easings) : Interpolator {
         }
     }
 
-    private fun bounceInOut(t:Float): Float {
-        if (t<0.5) {
-            val t=1-2*t
+    private fun bounceInOut(t: Float): Float {
+        if (t < 0.5) {
+            val t = 1 - 2 * t
             return when {
-                t < (1/2.75) -> ((1 - (7.5625*t*t))/2).toFloat()
-                t < (2/2.75) -> ((1 - (7.5625*(t-(1.5/2.75))*(t-(1.5/2.75)) + 0.75))/2).toFloat()
-                t < (2.5/2.75) -> ((1 - (7.5625*(t-(2.25/2.75))*(t-(2.25/2.75)) + 0.9375))/2).toFloat()
-                else -> ((1 - (7.5625*(t-(2.625/2.75))*(t-(2.625/2.75)) + 0.984375))/2).toFloat()
+                t < (1 / 2.75) -> ((1 - (7.5625 * t * t)) / 2).toFloat()
+                t < (2 / 2.75) -> ((1 - (7.5625 * (t - (1.5 / 2.75)) * (t - (1.5 / 2.75)) + 0.75)) / 2).toFloat()
+                t < (2.5 / 2.75) -> ((1 - (7.5625 * (t - (2.25 / 2.75)) * (t - (2.25 / 2.75)) + 0.9375)) / 2).toFloat()
+                else -> ((1 - (7.5625 * (t - (2.625 / 2.75)) * (t - (2.625 / 2.75)) + 0.984375)) / 2).toFloat()
             }
         } else {
-            val t=2*t-1
+            val t = 2 * t - 1
             return when {
-                t < (1/2.75) -> (0.5 + (7.5625*t*t)/2).toFloat()
-                t < (2/2.75) -> (0.5 + (7.5625*(t-(1.5/2.75))*(t-(1.5/2.75)) + 0.75)/2).toFloat()
-                t < (2.5/2.75) -> (0.5 + (7.5625*(t-(2.25/2.75))*(t-(2.25/2.75)) + 0.9375)/2).toFloat()
-                else -> (0.5 + (7.5625*(t-(2.625/2.75))*(t-(2.625/2.75)) + 0.984375)/2).toFloat()
+                t < (1 / 2.75) -> (0.5 + (7.5625 * t * t) / 2).toFloat()
+                t < (2 / 2.75) -> (0.5 + (7.5625 * (t - (1.5 / 2.75)) * (t - (1.5 / 2.75)) + 0.75) / 2).toFloat()
+                t < (2.5 / 2.75) -> (0.5 + (7.5625 * (t - (2.25 / 2.75)) * (t - (2.25 / 2.75)) + 0.9375) / 2).toFloat()
+                else -> (0.5 + (7.5625 * (t - (2.625 / 2.75)) * (t - (2.625 / 2.75)) + 0.984375) / 2).toFloat()
             }
         }
     }
@@ -97,28 +101,28 @@ class Interpolators(@NonNull val easing: Easings) : Interpolator {
     private fun elasticIn(t: Float): Float {
         if (t == 0f || t == 1f) return t
         val pi2 = Math.PI * 2
-        val s = .3 / pi2 * Math.asin(1.0)
+        val s = .3 / pi2 * asin(1.0)
         val o = t - 1f
-        return -(1 * Math.pow(2.0, 10.0 * o) * Math.sin((o - s) * pi2 / .3)).toFloat()
+        return -(1 * 2.0.pow(10.0 * o) * sin((o - s) * pi2 / .3)).toFloat()
     }
 
     private fun elasticOut(t: Float): Float {
         if (t == 0f || t == 1f) return t
         val pi2 = Math.PI * 2
-        val s = .3 / pi2 * Math.asin(1.0)
-        return (Math.pow(2.0, (-10 * t).toDouble()) * Math.sin((t - s) * pi2 / .3) + 1).toFloat()
+        val s = .3 / pi2 * asin(1.0)
+        return (2.0.pow((-10 * t).toDouble()) * sin((t - s) * pi2 / .3) + 1).toFloat()
     }
 
     private fun elasticInOut(t: Float): Float {
         val pi2 = Math.PI * 2
-        val s = .45 / pi2 * Math.asin(1.0)
+        val s = .45 / pi2 * asin(1.0)
         var o = t * 2f
         return if (o < 1) {
             o -= 1f
-            (-0.5f * (Math.pow(2.0, (10 * o).toDouble()) * Math.sin((o - s) * pi2 / .45))).toFloat()
+            (-0.5f * (2.0.pow((10 * o).toDouble()) * sin((o - s) * pi2 / .45))).toFloat()
         } else {
             o -= 1f
-            (Math.pow(2.0, (-10 * o).toDouble()) * Math.sin((o - s) * pi2 / .45) * 0.5 + 1).toFloat()
+            (2.0.pow((-10 * o).toDouble()) * sin((o - s) * pi2 / .45) * 0.5 + 1).toFloat()
         }
     }
 }
